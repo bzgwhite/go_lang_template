@@ -9,8 +9,12 @@ stop:
 	docker compose stop
 
 # コンテナ停止および削除
-stop:
+down:
 	docker compose down
+
+# コンテナ侵入
+apps:
+	docker compose exec app /bin/bash
 
 # モジュール初期化
 mod-init:
@@ -32,6 +36,6 @@ get:
 multi-stage-build:
 	docker build -t ${APP_NAME}:${APP_VERSION} -f multi_build/Dockerfile .
 
-# マルチコンテナ実行
-multi-stage-build:
+# マルチコンテナイメージ削除
+multi-stage-delete:
 	docker run -i --rm ${APP_NAME}:${APP_VERSION}
