@@ -30,7 +30,7 @@ run:
 
 # 例） make get ARG=モジュール名
 get:
-	docker comose exec app go get ${ARG}
+	docker compose exec app go get ${ARG}
 
 # マルチステージビルド
 multi-stage-build:
